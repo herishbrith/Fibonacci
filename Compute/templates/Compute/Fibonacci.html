@@ -1,0 +1,14 @@
+{% extends "Compute/base.html" %}
+{% block fibonacci %}
+
+<form method="post">
+	<div>
+		<label for="nthNumber">Nth Number</label>
+		{{ form.nthNumber }}<br>
+
+		{% if result %}
+			{{ result }}
+		{% endif %}
+	</div>
+</form>
+{% endblock %}
