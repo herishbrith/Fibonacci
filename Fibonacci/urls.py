@@ -20,3 +20,4 @@ urlpatterns = [
 
 	url(r'^$', include('Compute.urls')),
 ]
+urlpatterns += staticfiles_urlpatterns()
