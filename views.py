@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from Compute.forms import NumberForm
 
@@ -30,3 +30,5 @@ def computeNthNumber(request):
 			return render(request, "Compute/Fibonacci.html", {"result": z, "form": form})
 
 		else: return render(request, "Compute/Fibonacci.html", {"form": form})
+
+	else: return redirect("computeNthNumber")
