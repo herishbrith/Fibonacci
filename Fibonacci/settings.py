@@ -117,7 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 print PROJECT_ROOT
-PROJECT_DIR = os.path.join(PROJECT_ROOT,'../Fibonacci')
+PROJECT_DIR = os.path.join(PROJECT_ROOT,'Fibonacci')
 print PROJECT_DIR
 STATIC_ROOT= os.path.join(PROJECT_DIR,'staticfiles/')
 print STATIC_ROOT
