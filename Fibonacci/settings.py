@@ -116,11 +116,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+print PROJECT_ROOT
 PROJECT_DIR = os.path.join(PROJECT_ROOT,'../Fibonacci')
+print PROJECT_DIR
 STATIC_ROOT= os.path.join(PROJECT_DIR,'staticfiles/')
+print STATIC_ROOT
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT,'static/'),
 )
+print STATICFILES_DIRS
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
