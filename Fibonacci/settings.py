@@ -14,8 +14,6 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-print BASE_DIR
-STATIC_PATH = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -24,7 +22,7 @@ STATIC_PATH = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = '3f&%xynp*zw7f*e8b5e2188anrt(gt^9-9()#82n6970c+vn+i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -115,7 +113,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
 
-	STATIC_PATH,
+	os.path.join(BASE_DIR, 'static'),
 )
 STATIC_URL = "/static/"
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
