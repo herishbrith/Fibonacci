@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
 
-	url(r'^find/', views.computeNthNumber, name='computeNthNumber'),
+	url(r'^', views.computeNthNumber, name='computeNthNumber'),
 ]
