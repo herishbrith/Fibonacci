@@ -68,6 +68,7 @@ TEMPLATES = [
         },
     },
 ]
+print TEMPLATES[0]["DIRS"]
 
 WSGI_APPLICATION = 'Fibonacci.wsgi.application'
 
