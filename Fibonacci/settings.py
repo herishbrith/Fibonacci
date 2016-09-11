@@ -123,7 +123,7 @@ print PROJECT_DIR
 STATIC_ROOT= os.path.join(PROJECT_DIR,'staticfiles/')
 print STATIC_ROOT
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT,'static/'),
+    os.path.join(PROJECT_DIR,'staticfiles/'),
 )
 print STATICFILES_DIRS
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
