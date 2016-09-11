@@ -1,0 +1,71 @@
+{% extends "Compute/base.html" %}
+{% block fibonacci %}
+
+<form method="post" class="fibContainer">
+	<h2>
+		Fibonacci Number
+	</h2>
+	<div class="enterNum">
+	{{ form.nthNumber }}
+	</div>
+	<br><br>
+	<label>Enter the number N and press Return</label>
+</form>
+{% if result %}
+	<div class="result">
+
+	{{ result }}
+	</div>
+{% endif %}
+<style>
+	.fibContainer{
+
+		width: 40%;
+		min-height: 150px;
+		margin: 0 auto;
+		margin-top: 60px;
+		border: 1px solid #eeeeee;
+		text-align: center;
+		padding: 20px;
+		box-shadow: 0px 0px 6px 0px #eee;
+	}
+	.fibContainer > h2{
+
+		height: 30px;
+	}
+	.fibContainer > .enterNum{
+
+		width: 150px;
+		height: 20px;
+		border: 1px solid #de6c27;
+		margin: 0 auto;
+		margin-top: 30px;
+		padding: 5px;
+		
+	}
+	.fibContainer > .enterNum input{
+
+		width: inherit;
+		height: inherit;
+		text-align: center;
+		border: 0;
+		font-size: 18px;
+		color: green;
+	}
+	.result{
+
+		margin: 0 auto;
+		margin-top: 20px;
+		padding: 8px 10px;
+		width: 40%;
+		min-height: 25px;
+		background-color: #fff;
+		font-size: 18px;
+		text-align: center;
+		color: #0e0c0c;
+		word-wrap: break-word;
+		height: auto;
+
+	}
+</style>
+{% endblock %}
