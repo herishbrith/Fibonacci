@@ -24,7 +24,7 @@ print BASE_DIR
 SECRET_KEY = '3f&%xynp*zw7f*e8b5e2188anrt(gt^9-9()#82n6970c+vn+i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -121,12 +121,13 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 print PROJECT_ROOT
 PROJECT_DIR = os.path.join(PROJECT_ROOT,'Fibonacci')
 print PROJECT_DIR
-STATIC_ROOT= os.path.join(PROJECT_ROOT,'staticfiles/')
+STATIC_ROOT = normpath(join(BASE_DIR, 'assets'))
 print STATIC_ROOT
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR,'staticfiles/'),
 )
 print STATICFILES_DIRS
+STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 #SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
