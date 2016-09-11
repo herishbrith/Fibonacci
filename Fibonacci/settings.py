@@ -126,7 +126,6 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT,'static/'),
 )
 print STATICFILES_DIRS
-STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 #SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
