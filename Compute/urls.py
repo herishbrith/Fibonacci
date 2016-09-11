@@ -5,5 +5,5 @@ from django.conf import settings
 
 urlpatterns = [
 
-	url(r'^', views.computeNthNumber, name='computeNthNumber') + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
-]
+	url(r'^', views.computeNthNumber, name='computeNthNumber'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
