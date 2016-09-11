@@ -14,8 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-print BASE_DIR
-
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -56,7 +55,7 @@ ROOT_URLCONF = 'Fibonacci.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,10 +67,8 @@ TEMPLATES = [
         },
     },
 ]
-print TEMPLATES[0]["DIRS"]
 
 WSGI_APPLICATION = 'Fibonacci.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -117,17 +114,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-print PROJECT_ROOT
-PROJECT_DIR = os.path.join(PROJECT_ROOT,'Fibonacci')
-print PROJECT_DIR
-STATIC_ROOT= os.path.join(PROJECT_ROOT,'staticfiles/')
-print STATIC_ROOT
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_DIR,'staticfiles/'),
+    os.path.join(PROJECT_ROOT, 'static'),
 )
-print STATICFILES_DIRS
 STATIC_URL = "/static/"
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
