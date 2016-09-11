@@ -19,7 +19,7 @@ def computeNthNumber(request):
 
 			data = form.data
 			pos = int(data["nthNumber"])
-			x, y = 0, 1
+			x, y, z = 0, 1, 1
 
 			for i in range(pos-1):
 
