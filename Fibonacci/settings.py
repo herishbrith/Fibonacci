@@ -14,7 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_PATH = os.path.join(BASE_DIR,'static')
+print BASE_DIR
+STATIC_PATH = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -26,7 +27,6 @@ SECRET_KEY = '3f&%xynp*zw7f*e8b5e2188anrt(gt^9-9()#82n6970c+vn+i'
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -79,7 +79,6 @@ DATABASES = {
 	}
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
@@ -98,7 +97,6 @@ AUTH_PASSWORD_VALIDATORS = [
 	},
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
@@ -112,9 +110,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+STATIC_ROOT = os.path.join(STATIC_PATH, 'static')
 STATICFILES_DIRS = (
 
 	STATIC_PATH,
