@@ -11,10 +11,17 @@
 	<br><br>
 	<label>Enter a number and hit Return</label>
 </form>
+{% if time %}
+	<div class="result">
+		<label>Processing time</label>
+		{{ time }}
+	</div>
+{% endif %}
+
 {% if result %}
 	<div class="result">
-
-	{{ result }}
+		<label>{{ ordinal }} Number of Fibonacci Sequence</label><br>
+		{{ result }}
 	</div>
 {% endif %}
 <style>
