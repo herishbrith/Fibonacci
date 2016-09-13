@@ -7,6 +7,10 @@ from time import time
 @csrf_exempt
 def computeNthNumber(request):
 
+	countList = Count.objects.all()
+
+	if not countList: Count.objects.create(visitCount=1, searchCount=1)
+
 	# Get the IP of the requesting user using the following lambda
 	getAddress = lambda req: request.META.get('HTTP_X_FORWARDED_FOR')\
 	if request.META.get('HTTP_X_FORWARDED_FOR')\
