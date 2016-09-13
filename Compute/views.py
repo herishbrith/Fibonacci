@@ -98,9 +98,9 @@ def computeNthNumber(request):
 
 	else: return redirect("computeNthNumber")
 
-@csrf_exempt
-def attendReviews(request):
+def createCountEntry():
 
-	if request.method == "GET":
+	count = Count.objects.all()
 
-		pass
+	if not count: Count.objects.create(visitCount=1)
+createCountEntry()
