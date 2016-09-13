@@ -8,9 +8,6 @@ from time import time
 def computeNthNumber(request):
 
 	countList = Count.objects.all()
-	if not countList: Count.objects.create(visitCount=1, searchCount=1)
-
-	print countList
 
 	# Get the IP of the requesting user using the following lambda
 	getAddress = lambda req: request.META.get('HTTP_X_FORWARDED_FOR')\
@@ -78,6 +75,7 @@ def computeNthNumber(request):
 
 				# Increase the search count of the IP user
 				user.searchCount += 1; user.save()
+				count.searchCount += 1; count.save()
 
 			except Exception, e: print e
 
@@ -102,10 +100,3 @@ def computeNthNumber(request):
 		else: return render(request, "Compute/Fibonacci.html", pageDict)
 
 	else: return redirect("computeNthNumber")
-
-def createCountEntry():
-
-	count = Count.objects.all()
-
-	if not count: Count.objects.create(visitCount=1, searchCount=1)
-createCountEntry()
