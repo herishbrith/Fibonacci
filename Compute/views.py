@@ -17,7 +17,7 @@ def computeNthNumber(request):
 	else request.META.get('REMOTE_ADDR')
 
 	# Get the visitor count
-	count = Count.objects.get(pk=1)
+	count = Count.objects.get(countId=1)
 
 	# if the request method is GET, get a blank form
 	form = NumberForm()
