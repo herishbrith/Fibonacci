@@ -6,5 +6,4 @@ from django.conf import settings
 urlpatterns = [
 
 	url(r'^$', views.computeNthNumber, name='compute'),
-	url(r'^reviews$', views.attendReviews, name='reviews'),
 ]

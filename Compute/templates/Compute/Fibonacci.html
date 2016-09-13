@@ -3,10 +3,10 @@
 
 <div class="counter">
     <div>
-		<b>Visits Count</b>: {{ visitCount }}
+		<b>Visits Count</b> {{ visitCount }}
 	</div>
 	<div>
-		<b>Search Count</b>: {{ searchCount }}
+		<b>Search Count</b> {{ searchCount }}
 	</div>
 </div>
 
@@ -22,14 +22,14 @@
 </form>
 {% if time %}
 	<div class="result">
-		<label>Processing time</label>
+		<label><b>Processing time</b></label>
 		{{ time }}
 	</div>
 {% endif %}
 
 {% if result %}
 	<div class="result">
-		<label>{{ ordinal }} Number of Fibonacci Sequence</label><br>
+		<label>{{ ordinal }} <b>Number of Fibonacci Sequence</b></label><br>
 		{{ result }}
 	</div>
 {% endif %}

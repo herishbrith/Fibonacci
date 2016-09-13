@@ -7,13 +7,16 @@ from time import time
 @csrf_exempt
 def computeNthNumber(request):
 
+	countList = Count.objects.all()
+	if not countList: Count.objects.create(visitCount=1, searchCount=1)
+
 	# Get the IP of the requesting user using the following lambda
 	getAddress = lambda req: request.META.get('HTTP_X_FORWARDED_FOR')\
 	if request.META.get('HTTP_X_FORWARDED_FOR')\
 	else request.META.get('REMOTE_ADDR')
 
 	# Get the visitor count
-	count = Count.objects.get(pk=1)
+	count = Count.objects.get(countId=countList[0].countId)
 
 	# if the request method is GET, get a blank form
 	form = NumberForm()
@@ -97,10 +100,3 @@ def computeNthNumber(request):
 		else: return render(request, "Compute/Fibonacci.html", pageDict)
 
 	else: return redirect("computeNthNumber")
-
-@csrf_exempt
-def attendReviews(request):
-
-	if request.method == "GET":
-
-		pass
