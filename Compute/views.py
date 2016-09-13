@@ -102,5 +102,5 @@ def createCountEntry():
 
 	count = Count.objects.all()
 
-	if not count: Count.objects.create(visitCount=1)
+	if not count: Count.objects.create(visitCount=1, searchCount=1)
 createCountEntry()
