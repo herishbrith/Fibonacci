@@ -1,6 +1,15 @@
 {% extends "Compute/base.html" %}
 {% block fibonacci %}
 
+<div class="counter">
+    <div>
+		<b>Visits Count</b> {{ visitCount }}
+	</div>
+	<div>
+		<b>Search Count</b> {{ searchCount }}
+	</div>
+</div>
+
 <form method="post" class="fibContainer">
 	<h2>
 		Fibonacci Number
@@ -13,24 +22,35 @@
 </form>
 {% if time %}
 	<div class="result">
-		<label>Processing time</label>
+		<label><b>Processing time</b></label>
 		{{ time }}
 	</div>
 {% endif %}
 
 {% if result %}
 	<div class="result">
-		<label>{{ ordinal }} Number of Fibonacci Sequence</label><br>
+		<label>{{ ordinal }} <b>Number of Fibonacci Sequence</b></label><br>
 		{{ result }}
 	</div>
 {% endif %}
 <style>
+	.counter{
+		width: 40%;
+		min-height: 30px;
+		margin:  0 auto;
+		margin-top: 80px;
+	}
+	.counter > div{
+		width: 50%;
+	}
+	.counter > div:nth-child(1){ float: left; text-align: left; }
+	.counter > div:nth-child(2){ float: right; text-align: right; }
 	.fibContainer{
 
 		width: 40%;
 		min-height: 150px;
 		margin: 0 auto;
-		margin-top: 60px;
+		margin-top: 0px;
 		border: 1px solid #eeeeee;
 		text-align: center;
 		padding: 20px;

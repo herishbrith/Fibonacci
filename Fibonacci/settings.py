@@ -53,7 +53,7 @@ ROOT_URLCONF = 'Fibonacci.urls'
 TEMPLATES = [
 	{
 		'BACKEND': 'django.template.backends.django.DjangoTemplates',
-		'DIRS': [],
+		'DIRS': ['templates'],
 		'APP_DIRS': True,
 		'OPTIONS': {
 			'context_processors': [
@@ -71,10 +71,14 @@ WSGI_APPLICATION = 'Fibonacci.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-	'default': {
-	}
-}
+DATABASES = {}
+
+import dj_database_url
+
+DATABASES['default'] = dj_database_url.config(
+
+	default='postgres://ckddpxweuhhxnp:UGw1Szp-y_52luaDm9ugoIKgR1@ec2-23-23-237-146.compute-1.amazonaws.com:5432/d2vi566r0vmtkq'
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
