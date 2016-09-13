@@ -8,8 +8,9 @@ from time import time
 def computeNthNumber(request):
 
 	countList = Count.objects.all()
-
 	if not countList: Count.objects.create(visitCount=1, searchCount=1)
+
+	print countList
 
 	# Get the IP of the requesting user using the following lambda
 	getAddress = lambda req: request.META.get('HTTP_X_FORWARDED_FOR')\
@@ -17,7 +18,7 @@ def computeNthNumber(request):
 	else request.META.get('REMOTE_ADDR')
 
 	# Get the visitor count
-	count = Count.objects.get(countId=1)
+	count = Count.objects.get(countId=countList[0].countId)
 
 	# if the request method is GET, get a blank form
 	form = NumberForm()
