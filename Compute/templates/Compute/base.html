@@ -1,28 +1,7 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Fibonnaci number</title>
+	{% block fibonacci %}
 
-		<style>
-			*{
-				padding: 0;
-				height: 0;
-				margin: 0;
-				outline: none;
-				font-family: sans-serif;
-			}
-			.clear{
-				clear: both;
-			}
-		</style>
-	</head>
-
-	<body>
-		{% include "Compute/header.html" %}
-		{% block fibonacci %}
-
-		{% endblock %}
-	</body>
-</html>
+	{% endblock %}
+{% endblock %}
