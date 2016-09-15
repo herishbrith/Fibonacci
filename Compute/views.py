@@ -41,7 +41,12 @@ def computeNthNumber(request):
 		except Exception, e: print e
 
 		# Get cookie from the browser
-		try: cookie = request.COOKIES["count"]
+		try:
+
+			cookie = request.COOKIES["count"]
+
+			# Create response object
+			response = render(request, "Compute/Fibonacci.html", pageDict)
 
 		except:
 
