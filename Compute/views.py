@@ -30,9 +30,6 @@ def computeNthNumber(request):
 
 	if request.method == "GET":
 
-		# Create response object
-		response = render(request, "Compute/Fibonacci.html", pageDict)
-
 		try:
 
 			IP_DATA = str(getAddress(request))
@@ -47,6 +44,12 @@ def computeNthNumber(request):
 		try: cookie = request.COOKIES["count"]
 
 		except:
+
+			# Increase the visit count to be displayed
+			pageDict["visitCount"] += 1
+
+			# Create response object
+			response = render(request, "Compute/Fibonacci.html", pageDict)
 
 			# pass cookie along with response object
 			response.set_cookie('count', True, max_age=86400)
@@ -76,6 +79,9 @@ def computeNthNumber(request):
 				# Increase the search count of the IP user
 				user.searchCount += 1; user.save()
 				count.searchCount += 1; count.save()
+
+				# Increase the search count to be displayed
+				pageDict["searchCount"] += 1
 
 			except Exception, e: print e
 
