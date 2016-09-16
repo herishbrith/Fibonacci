@@ -28,6 +28,9 @@ def computeNthNumber(request):
 		"form": form
 	}
 
+	# Create response object
+	response = render(request, "Compute/Fibonacci.html", pageDict)
+
 	if request.method == "GET":
 
 		try:
@@ -41,20 +44,9 @@ def computeNthNumber(request):
 		except Exception, e: print e
 
 		# Get cookie from the browser
-		try:
-
-			cookie = request.COOKIES["count"]
-
-			# Create response object
-			response = render(request, "Compute/Fibonacci.html", pageDict)
+		try: cookie = request.COOKIES["count"]
 
 		except:
-
-			# Increase the visit count to be displayed
-			pageDict["visitCount"] += 1
-
-			# Create response object
-			response = render(request, "Compute/Fibonacci.html", pageDict)
 
 			# pass cookie along with response object
 			response.set_cookie('count', True, max_age=86400)
