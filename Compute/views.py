@@ -102,7 +102,5 @@ def computeNthNumber(request):
 			pageDict["time"] = stop
 			pageDict["ordinal"] = ordinal(pos)
 			return render(request, "Compute/Fibonacci.html", pageDict)
-
 		else: return render(request, "Compute/Fibonacci.html", pageDict)
-
 	else: return redirect("computeNthNumber")
